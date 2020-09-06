@@ -52,16 +52,16 @@ jobs:
 
       - name: Generate configuration file
         run: make defconfig
-     	  rm package/lean/luci-app-flowoffload -fr
-          rm package/lean/shortcut-fe/ -fr
-          rm package/lean/luci-app-sfe/ -fr
-          cd package
-          git clone https://github.com/destan19/OpenAppFilter.git
-          cd -
-          echo "CONFIG_PACKAGE_appfilter=y" >>.config
-          echo "CONFIG_PACKAGE_kmod-oaf=y" >>.config
-          echo "CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y" >>.config
-          echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config
+        rm package/lean/luci-app-flowoffload -fr
+        rm package/lean/shortcut-fe/ -fr
+        rm package/lean/luci-app-sfe/ -fr
+        cd package
+        git clone https://github.com/destan19/OpenAppFilter.git
+        cd -
+        echo "CONFIG_PACKAGE_appfilter=y" >>.config
+        echo "CONFIG_PACKAGE_kmod-oaf=y" >>.config
+        echo "CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y" >>.config
+        echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config
 
       - name: Make download
         run: |
